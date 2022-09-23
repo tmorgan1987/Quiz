@@ -1,44 +1,85 @@
+// Called elements
+var timeEl = document.getElementById("timer");
+var startEl = document.getElementById("start");
+var descriptionEl = document.getElementById("description");
+var choiceA = document.getElementById("A");
+var choiceB = document.getElementById("B");
+var choiceC = document.getElementById("C");
+var choiceD = document.getElementById("D");
+var quiz = document.getElementById("quiz");
+var questionDisplay = document.getElementById("questionDisplay");
+var results = document.getElementById("results");
+
+// Question Array
 var questions = [
-  {
-    id: 1,
-    question: "Sample text in here",
-    answers: ["sample", "ample", "anotherprop", "word"],
-    correct: answers[1],
-  },
-];
+	{
+			question: "Commonly used data types DO NOT include:",
+			choiceA: "strings",
+			choiceB: "booleans",
+			choiceC: "alerts",
+			choiceD: "numbers",
+			correct: "C"
+	},{
+			question: "The condition in an if/else statement is enclosed with __.",
+			choiceA: "quotes",
+			choiceB: "curly brackets",
+			choiceC: "parenthesis",
+			choiceD: "square brackets",
+			correct: "C"
+	},{
+			question: "Arrays in JavaScript can be used to store __.",
+			choiceA: "numbers and strings",
+			choiceB: "other arrays",
+			choiceC: "booleans",
+			choiceD: "all of the above",
+			correct: "D"
+	},{
+			question: "String values must be enclosed within _ when being assigned to variables.",
+			choiceA: "commas",
+			choiceB: "curly brackets",
+			choiceC: "quotes",
+			choiceD: "parenthesis",
+			correct: "C"
+	},{
+			question: "A very useful tool used during development and debugging for printing content to the debugger is:",
+			choiceA: "JavaScript",
+			choiceB: "terminal/bash",
+			choiceC: "for loops",
+			choiceD: "console.log",
+			correct: "D"
+	}];
 
-var timerEl = document.querySelector("#timer");
-var scoresEl = document.querySelector("#scoreshtml");
-var startEl = document.querySelector("#start");
-var startEl = document.querySelector("#questions-container");
-var formEl = document.querySelector("#givetheformanid");
-var questionIndex = 0;
 
-function startQuiz() {
-  console.log("startquizfunction");
-	displayQuestion();
+// timer function
+var secondsLeft = 75;
+function setTime() {
+  var timerInterval = setInterval(function() {
+    secondsLeft--;
+    timeEl.textContent = "Time: " +secondsLeft;
+
+    if(secondsLeft <= 0) {
+      clearInterval(timerInterval);
+    }
+
+  }, 1000);
 }
 
-function nextQuestion() {
-  console.log("next question");
-  var currentQuestion = questions[questionIndex];
-  if (currentQuestion.correct === formEl.children.value) {
-    console.log("correct answer");
-  }
-
-  if (currentQuestion.correct !== formEl.children.value) {
-    console.log("incorrect answer");
-  }
+// button
+startEl.addEventListener("click", startQuiz);
+	function startQuiz() {
+	descriptionEl.style.display="none";
+	timeEl.style.display="block";
+	setTime();
+	displayQ();
 }
 
-function displayQuestion(curr = {}) {
-  console.log("display question");
-  for (var i = 0; i < curr.choices.length; i++) {
-    var label = document.createElement("label");
-    var input = document.createElement("input");
-    label.textContent = current.choices[i];
-		input.setAttribute("value", current.choices[i]);
-  }
+
+var lastQuestion = questions.length-1;
+var currentQuestion = 0;
+
+
+function displayQ () {
+questionDisplay.textContent = questions[currentQuestion].question;
+choiceA.textContent = 
 }
 
-// look up control flow, document.createElement

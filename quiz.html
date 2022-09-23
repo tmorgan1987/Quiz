@@ -11,35 +11,34 @@
 <body>
 	<header>
 		<p>High Scores <a href="scores.html" id="scoreshtml">Click here</a></p></a>
-		<p>Time Remaining: <span id=timer>60</span></p>
+		<div><span id=timer style="display:none"></span></div>
 	</header>
 	<main>
 
 		<section id="description">
 			<h1>Welcome to the Coding Quiz!</h1>
-			<p>The Coding Quiz tests your knowledge of HTML, CSS, and Javascript. The questions each have 3 possible answers,
+			<p>The Coding Quiz tests your knowledge of HTML, CSS, and Javascript. 	The questions each have 3 possible answers,
 				and if you choose
 				correctly, you'll be taken to the next question and your score will increase. If you answer incorrectly, the
 				timer in the top left
 				of the page will have it's remaining time reduced.</p>
 
-			<button id="start" class="btn">Begin!</button>
+			<button id="start">Begin!</button>
 			<!--Figure out how to start timer and switch to question divs-->
 		</section>
-
-
-		<section id="questions" class="container">
-			<h4>Question number?</h4>
-			<form id="#givetheformanid" action="" method="post">
-				<label for="submit">Submit answer</label>
-				<input type="submit" name="submit" value>
-			</form>
+		<section>
+			<div id="quiz" style="display: none">
+			<div id="questionDisplay"></div>
+			<div id="choices" id="A" onclick="checkAnswer('A')"></div>
+			<div id="choices" id="B" onclick="checkAnswer('B')"></div>
+			<div id="choices" id="C" onclick="checkAnswer('C')"></div>
+			<div id="choices" id="D" onclick="checkAnswer('D')"></div>
+			<div id="results"></div> 
+			</div>
 		</section>
-	</main>
-	<footer>
-		<p>Here's a footer.</p>
-	</footer>
-	<script type="Javascript" src="script.js"></script>
+
+
+	<script src="script.js"></script>
 </body>
 
 </html>
