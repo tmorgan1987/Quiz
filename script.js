@@ -60,15 +60,20 @@ function setTime() {
     if(secondsLeft <= 0) {
       clearInterval(timerInterval);
     }
-
+		if(noMasQuestiones === 0) {
+			clearInterval(timerInterval);
+		}
   }, 1000);
 }
 
 // button
 startEl.addEventListener("click", startQuiz);
+
 	function startQuiz() {
 	descriptionEl.style.display="none";
 	timeEl.style.display="block";
+	quiz.style.display="block";
+
 	setTime();
 	displayQ();
 }
@@ -78,8 +83,31 @@ var lastQuestion = questions.length-1;
 var currentQuestion = 0;
 
 
+// this function displays my questions and answers
 function displayQ () {
 questionDisplay.textContent = questions[currentQuestion].question;
-choiceA.textContent = 
+choiceA.innerHTML = questions[currentQuestion].choiceA;
+choiceB.innerHTML = questions[currentQuestion].choiceB;
+choiceC.innerHTML = questions[currentQuestion].choiceC;
+choiceD.innerHTML = questions[currentQuestion].choiceD;
 }
 
+var noMasQuestiones = 1;
+
+// this function checks for correct answer
+function correctAnswer (answer) {
+	console.log(answer)
+	if (answer === questions[currentQuestion].correct){
+		results.textContent = "This is the correct answer.";
+	}
+	else {results.textContent = "This is the incorrect answer.";
+				secondsLeft = secondsLeft-10;}
+	if (currentQuestion < lastQuestion){
+		currentQuestion++;
+		displayQ();
+	}
+	else {quiz.style.display= "none";
+				noMasQuestiones=0;}
+}
+
+function userInitials () {}

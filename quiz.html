@@ -27,16 +27,19 @@
 			<!--Figure out how to start timer and switch to question divs-->
 		</section>
 		<section>
-			<div id="quiz" style="display: none">
+		<div id="quiz">
 			<div id="questionDisplay"></div>
-			<div id="choices" id="A" onclick="checkAnswer('A')"></div>
-			<div id="choices" id="B" onclick="checkAnswer('B')"></div>
-			<div id="choices" id="C" onclick="checkAnswer('C')"></div>
-			<div id="choices" id="D" onclick="checkAnswer('D')"></div>
-			<div id="results"></div> 
+			<div class="choices" id="A" onclick="correctAnswer('A')"></div>
+			<div class="choices" id="B" onclick="correctAnswer('B')"></div>
+			<div class="choices" id="C" onclick="correctAnswer('C')"></div>
+			<div class="choices" id="D" onclick="correctAnswer('D')"></div>
+			<div class="results"></div> 
 			</div>
 		</section>
+		
+		<section id="user-form" style="display: none">
 
+		</section>
 
 	<script src="script.js"></script>
 </body>
