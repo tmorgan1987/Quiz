@@ -12,9 +12,9 @@ header p {
 		font-size: 18px;
 	}
 
-	span {
+	/* span {
 		font-size: 25px;
-	}
+	} */
 
 	#description {
 		margin: auto;
@@ -34,4 +34,39 @@ header p {
 		cursor: pointer;
 	}
 
+#quiz {
+		margin: auto;
+		width: 50%;
+		padding-top: 100px;
+		text-align: center;
+}
 
+#questionDisplay {
+	font-size: 18px;
+	text-decoration: underline;
+	font-weight: bolder;
+}
+
+.choices {
+	font-size: 18px;
+	padding-top: 5px;
+	cursor: pointer;
+}
+
+#timer {
+	margin: auto;
+	width: 50%;
+	padding-top: 100px;
+	text-align: center;
+	font-weight: bold;
+	font-size: 20px
+}
+
+#user-form {
+	margin: auto;
+	width: 50%;
+	padding-top: 100px;
+	text-align: center;
+	font-weight: bold;
+	font-size: 20px;
+}

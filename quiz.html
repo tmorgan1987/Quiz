@@ -10,7 +10,6 @@
 
 <body>
 	<header>
-		<p>High Scores <a href="scores.html" id="scoreshtml">Click here</a></p></a>
 		<div><span id=timer style="display:none"></span></div>
 	</header>
 	<main>
@@ -33,11 +32,25 @@
 			<div class="choices" id="B" onclick="correctAnswer('B')"></div>
 			<div class="choices" id="C" onclick="correctAnswer('C')"></div>
 			<div class="choices" id="D" onclick="correctAnswer('D')"></div>
-			<div class="results"></div> 
+			<div id="results"></div> 
 			</div>
 		</section>
 		
 		<section id="user-form" style="display: none">
+			<div>All done!  Please enter your initials below:</div>
+			<div id="report"></div>
+			<form method="get">
+			<div>
+				<label for="initials">Your Initials Here:</label>
+				<input type="text" name="initials" id="initials"/>
+			</div>
+			<button id="submit">Submit</button>
+		</form>
+		</section>
+
+		<section id="scores" style="display: none">
+			<div>Your final score is:</div>
+			<p>blah</p>
 
 		</section>
 
